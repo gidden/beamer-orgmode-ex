@@ -1,0 +1,68 @@
+#+TITLE:     An Example of an "Easy" Beamer Presentation
+#+AUTHOR:    Matthew J. Gidden
+#+EMAIL:     matthew.gidden@gmail.com
+#+STARTUP: beamer
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+
+#+LaTeX_CLASS: beamer
+#+LaTeX_CLASS_OPTIONS: [10pt]
+
+#+BEAMER_THEME: Wisconsin [white,pdflogo]
+#+BEAMER_HEADER: \setbeamertemplate{bibliography item}[text]
+
+#+COMMENT: This is required because org-mode does not support short titles, etc.
+#+BEAMER_HEADER: \title[Beamer Example]{An Example of an "Easy" Beamer Presentation}
+#+BEAMER_HEADER: \author[M. J. Gidden]{Matthew J. Gidden}
+#+BEAMER_HEADER: \institute[UW-Madison]{University of Wisconsin-Madison}
+#+BEAMER_HEADER: \date[\today]{\today}
+
+* A main section
+** Introduction
+*** Introduction
+
+This is a quick way to make a presentation. You can find lots of information on
+org mode's [[http://orgmode.org/worg/exporters/beamer/tutorial.html][website]] using markdown like
+
+#+BEGIN_SRC org-mode
+[[http://orgmode.org/worg/exporters/beamer/tutorial.html][website]]
+#+END_SRC
+
+
+*** Columns
+**** col1
+:PROPERTIES:
+:BEAMER_col: 0.5
+:END:
+file:figs/thw.png
+
+**** Some Text
+:PROPERTIES:
+:BEAMER_col: 0.4
+:BEAMER_env: block
+:END:
+
+That is *soooome* text
+
+** Finishing Up
+*** And finally
+
+You can even cite things like:
+
+- The Gang of Four's Design Patterns \cite{vlissides_design_1995}
+- Meyer's Effective C++ \cite{meyers_effective_2005}
+
+*** References
+  :PROPERTIES:
+  :BEAMER_opt: allowframebreaks, plain, noframenumbering
+  :END:
+   \bibliographystyle{plain}
+   \bibliography{pres}
