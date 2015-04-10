@@ -36,7 +36,27 @@ org mode's [[http://orgmode.org/worg/exporters/beamer/tutorial.html][website]] u
 [[http://orgmode.org/worg/exporters/beamer/tutorial.html][website]]
 #+END_SRC
 
+**** This is in a repository
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+https://github.com/gidden/beamer-orgmode-ex
 
+*** your =.emacs= file
+
+By the way, that was inlined, like =.emacs= and =ls -l=
+
+#+BEGIN_SRC lisp
+; org mode
+(require 'ox-latex)
+(require 'ox-beamer)
+; this gets bibtex to work http://lists.gnu.org/archive/html/emacs-orgmode/2013-05/msg00791.html
+(setq org-latex-pdf-process (quote ("texi2dvi --pdf --clean --verbose
+--batch %f" "bibtex %b" "texi2dvi --pdf --clean --verbose --batch %f"
+"texi2dvi --pdf --clean --verbose --batch %f")))
+#+END_SRC
+
+** Gettin' Fancy
 *** Columns
 **** col1
 :PROPERTIES:
@@ -52,6 +72,7 @@ file:figs/thw.png
 
 That is *soooome* text
 
+* Conclusion
 ** Finishing Up
 *** And finally
 
